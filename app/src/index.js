@@ -8,10 +8,17 @@ import { routerMiddleware } from 'connected-react-router';
 import { createStore, applyMiddleware, compose } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { createHashHistory } from 'history';
+import FontFaceObserver from 'fontfaceobserver';
+import 'sanitize.css/sanitize.css';
+
 import reducers from './redux/reducers';
 import sagas from './redux/sagas';
 import Router from './router';
 import * as serviceWorker from './serviceWorker';
+
+const montserratObserver = new FontFaceObserver('Montserrat', {});
+
+montserratObserver.load().then(() => document.body.classList.add('fontLoaded'));
 
 const history = createHashHistory();
 const sagaMiddleware = createSagaMiddleware();

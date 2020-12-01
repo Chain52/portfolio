@@ -5,7 +5,7 @@ import Loadable from 'react-loadable';
 import PropTypes from 'prop-types';
 
 import Loader from './components/Loader';
-// import IndexLayout from './containers';
+import IndexLayout from './containers';
 import NotFoundPage from './pages/404';
 
 const loadable = (loader) =>
@@ -29,17 +29,19 @@ export default function Router(props) {
 
   return (
     <ConnectedRouter history={history}>
-      <Switch>
-        {routes.map((route) => (
-          <Route
-            path={route.path}
-            component={route.component}
-            key={route.path}
-            exact={route.exact}
-          />
-        ))}
-        <Route path="" component={NotFoundPage} />
-      </Switch>
+      <IndexLayout>
+        <Switch>
+          {routes.map((route) => (
+            <Route
+              path={route.path}
+              component={route.component}
+              key={route.path}
+              exact={route.exact}
+            />
+          ))}
+          <Route path="" component={NotFoundPage} />
+        </Switch>
+      </IndexLayout>
     </ConnectedRouter>
   );
 }
