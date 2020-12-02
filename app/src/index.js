@@ -4,29 +4,29 @@ import 'regenerator-runtime/runtime';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+import { logger } from 'redux-logger';
+import thunk from 'redux-thunk';
 import { routerMiddleware } from 'connected-react-router';
 import { createStore, applyMiddleware, compose } from 'redux';
 import createSagaMiddleware from 'redux-saga';
-import { createHashHistory } from 'history';
+import { createBrowserHistory } from 'history';
 import FontFaceObserver from 'fontfaceobserver';
-import 'sanitize.css/sanitize.css';
 
 import reducers from './redux/reducers';
 import sagas from './redux/sagas';
 import Router from './router';
 import * as serviceWorker from './serviceWorker';
 
-const montserratObserver = new FontFaceObserver('Montserrat', {});
+const robotoObserver = new FontFaceObserver('Roboto', {});
 
-montserratObserver.load().then(() => document.body.classList.add('fontLoaded'));
+robotoObserver.load().then(() => document.body.classList.add('fontLoaded'));
 
-const history = createHashHistory();
+const history = createBrowserHistory();
 const sagaMiddleware = createSagaMiddleware();
 const routeMiddleware = routerMiddleware(history);
-const middlewares = [sagaMiddleware, routeMiddleware];
+const middlewares = [thunk, sagaMiddleware, routeMiddleware];
 
 if (process.env.NODE_ENV === 'development') {
-  const { logger } = require('redux-logger'); // eslint-disable-line global-require
   middlewares.push(logger);
 }
 
@@ -44,3 +44,4 @@ ReactDOM.render(
 );
 
 serviceWorker.register();
+export { store, history };

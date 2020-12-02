@@ -5,7 +5,7 @@ import Loadable from 'react-loadable';
 import PropTypes from 'prop-types';
 
 import Loader from './components/Loader';
-import IndexLayout from './containers';
+import MainLayout from './containers/MainLayout';
 import NotFoundPage from './pages/404';
 
 const loadable = (loader) =>
@@ -16,10 +16,29 @@ const loadable = (loader) =>
   });
 
 const routes = [
-  // TODO: add routes
   {
     path: '/',
     component: loadable(() => import('./pages')),
+    exact: true,
+  },
+  {
+    path: '/resume',
+    component: loadable(() => import('./pages/resume')),
+    exact: true,
+  },
+  {
+    path: '/projects',
+    component: loadable(() => import('./pages/projects')),
+    exact: true,
+  },
+  {
+    path: '/blog',
+    component: loadable(() => import('./pages/blog')),
+    exact: true,
+  },
+  {
+    path: '/contact',
+    component: loadable(() => import('./pages/contact')),
     exact: true,
   },
 ];
@@ -29,7 +48,7 @@ export default function Router(props) {
 
   return (
     <ConnectedRouter history={history}>
-      <IndexLayout>
+      <MainLayout>
         <Switch>
           {routes.map((route) => (
             <Route
@@ -41,7 +60,7 @@ export default function Router(props) {
           ))}
           <Route path="" component={NotFoundPage} />
         </Switch>
-      </IndexLayout>
+      </MainLayout>
     </ConnectedRouter>
   );
 }

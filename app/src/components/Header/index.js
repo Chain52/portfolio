@@ -1,3 +1,1 @@
-export default {
-  Pill: import('./Pill'),
-};
+export { default } from './Header';
