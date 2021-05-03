@@ -1,20 +1,19 @@
 import React from 'react';
-import { Typography, Tab, AppBar, Tabs } from '@material-ui/core';
+import { Tab, AppBar, Tabs } from '@material-ui/core';
 import { compose } from 'redux';
 import { withRouter } from 'react-router';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import navigationData from '../../services/navigation';
 
 const Header = () => {
   const value = 0;
   return (
     <AppBar position="static">
-      <Typography>Colin Hain</Typography>
-      <Tabs variant="fullWidth" value={value} aria-label="nav tabs example">
+      <Tabs variant="fullWidth" value={value} aria-label="nav tabs" centered>
         {navigationData.map((section) => (
-          <Link to={section.url}>
-            <Tab component="div" label={section.title} />
-          </Link>
+          <NavLink to={section.url}>
+            <Tab component="span" label={section.title} />
+          </NavLink>
         ))}
       </Tabs>
     </AppBar>
