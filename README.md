@@ -1,10 +1,13 @@
 # Colin Hain Portfolio
 
-I am Colin Hain, a full-stack JavaScript developer. This repo contains the main code used throughout my portfolio website. The front-end is built using React 16 and styled using styled-components. The back-end is built using node.js LTS (Express.js framework) and many AWS services. It does follow a microservice approach; as you can see each folder is initialized as it's own npm project.
+I am Colin Hain, a full-stack JavaScript developer. This repo contains the main code used throughout my portfolio website. The front-end is built using React 16 and styled using styled-components. The back-end is built using node.js LTS (Express.js framework) and planned AWS services. It is designed with microservices in mind.
 
 ## Future Plans
 
-The future plans for this project are to first finish the frontend of the website and then to host it through AWS. After I have the site live, I will spend my time updating my old projects to AWS lambda to be accessible through the site.
+The high-level plans for this project are:
+- Finish the first version of the frontend of the website
+- Host it through AWS.
+- Update my old projects to AWS lambda to be accessible through the site.
 
 ## Upcoming Projects
 
@@ -12,7 +15,8 @@ The future plans for this project are to first finish the frontend of the websit
   - May include game rule change where a cell will die in water.
 - A basic banking portal with transfers between accounts.
 - A computer science quiz
+- Many more...
 
 ### Disclaimer
 
-I do know this is not the correct use of the README but I do not expect anyone to see this README until I have a more complete website and then this will be updated accordingly.
+Site is not live. Will update README when live.
