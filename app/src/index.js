@@ -1,5 +1,5 @@
 import 'core-js/stable';
-import 'regenerator-runtime/runtime';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -10,16 +10,11 @@ import { routerMiddleware } from 'connected-react-router';
 import { createStore, applyMiddleware, compose } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { createBrowserHistory } from 'history';
-import FontFaceObserver from 'fontfaceobserver';
 
 import reducers from './redux/reducers';
 import sagas from './redux/sagas';
 import Router from './router';
 import * as serviceWorker from './serviceWorker';
-
-const robotoObserver = new FontFaceObserver('Roboto', {});
-
-robotoObserver.load().then(() => document.body.classList.add('fontLoaded'));
 
 const history = createBrowserHistory();
 const sagaMiddleware = createSagaMiddleware();
