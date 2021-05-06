@@ -3,7 +3,12 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-scroll';
 import { Logo } from '../../elements';
 
-const Header = ({ light, logoSource, toggleMenu, headerToggler }) => {
+export default function Header({
+  light,
+  logoSource,
+  toggleMenu,
+  headerToggler,
+}) {
   const handleClasses = () => {
     let classes = 'desktop-header-1 d-flex align-items-start flex-column';
     if (light && toggleMenu) {
@@ -130,7 +135,7 @@ const Header = ({ light, logoSource, toggleMenu, headerToggler }) => {
       </header>
     </>
   );
-};
+}
 
 Header.propTypes = {
   light: PropTypes.bool,
@@ -138,5 +143,3 @@ Header.propTypes = {
   toggleMenu: PropTypes.bool,
   headerToggler: PropTypes.func,
 };
-
-export default Header;

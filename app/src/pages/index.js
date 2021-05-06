@@ -1,18 +1,18 @@
 // Pages are the different pages presented to the user.
 
 import React, { useState } from 'react';
-// import ReactCursorPosition from 'react-cursor-position';
+import ReactCursorPosition from 'react-cursor-position';
 import { Element } from 'react-scroll';
 import {
   Header,
   About,
-  // Blogs,
-  // Contact,
-  // Experiences,
-  // Herosection,
-  // Pricing,
-  // Services,
-  // Works,
+  Blogs,
+  Contact,
+  Experiences,
+  HeroSection,
+  Pricing,
+  Services,
+  Works,
 } from '../components/sections';
 import { Brandlogos } from '../components/elements';
 
@@ -38,14 +38,14 @@ export default () => {
       />
       <main className={toggleMenu ? 'content open' : 'content'}>
         <Element name="section-home">
-          {/* <ReactCursorPosition>
-            <Herosection />
-          </ReactCursorPosition> */}
+          <ReactCursorPosition>
+            <HeroSection />
+          </ReactCursorPosition>
         </Element>
         <Element name="section-about">
           <About />
         </Element>
-        {/* <Element name="section-services">
+        <Element name="section-services">
           <Services />
         </Element>
         <Element name="section-experiences">
@@ -56,16 +56,16 @@ export default () => {
         </Element>
         <Element name="section-pricing">
           <Pricing />
-        </Element> */}
+        </Element>
         <Element name="section-brandlogos">
           <Brandlogos />
         </Element>
-        {/* <Element name="section-blogs">
+        <Element name="section-blogs">
           <Blogs />
         </Element>
         <Element name="section-contact">
           <Contact />
-        </Element> */}
+        </Element>
         <div className="spacer" data-height="96"></div>
       </main>
     </>

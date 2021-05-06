@@ -1,5 +1,10 @@
 export { default as Loader } from './Loader';
-export * from './Logos';
+export { default as Blog } from './Blog';
+export { default as Timeline } from './Timeline';
+export { default as PriceBox } from './PriceBox';
+export { default as Service } from './Service';
+export { default as Portfolio } from './Portfolio';
 export { default as Counter } from './Counter';
 export { default as Skill } from './Skill';
 export { default as Pagetitle } from './Pagetitle';
+export * from './Logos';
